@@ -1,14 +1,15 @@
-// Creation and configuration of the Express APP
-const express = require("express");
+// src/app.js (CORREGIDO)
 
-import pool from '../dbConfig'; // conexion bbdd
+import express from "express"; // <--- CAMBIO
+import pool from '../dbConfig.js'; // conexion bbdd (Añadir .js)
+import apiRoutes from './routes/api.routes.js'; // <--- Añadir esta línea aquí
 
 const app = express();
 app.use(express.json());
 
 
 // Route configuration
-const apiRoutes = require('./routes/api.routes');
+// const apiRoutes = require('./routes/api.routes'); <--- ¡ELIMINAR ESTA LÍNEA!
 
 app.use('/api', apiRoutes);
 
@@ -25,4 +26,4 @@ app.use((err, req, res, next) => {
     res.status(500).json({ message: err.message });
 });
 
-module.exports = app;
+export default app; // <--- CAMBIO
