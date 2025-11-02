@@ -13,4 +13,13 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.post('/', async (req, res) => {
+    try {
+        const [result] = await Autor.create(req.body);
+        res.json(result);
+    } catch (error) {
+        res.json({error: error.message})
+    }
+});
+
 export default router; 
