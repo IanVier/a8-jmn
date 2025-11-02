@@ -1,13 +1,12 @@
-// src/routes/api.routes.js (CORREGIDO)
-
 import { Router } from 'express';
-import apiAutoresRouter from './api/autores.routes.js'; // Importación ES Module
+
+import apiAutoresRouter from './api/autores.routes.js';
+import apiPostsRouter from './api/posts.routes.js';
 
 const router = Router();
 
 router.use('/autores', apiAutoresRouter);
+router.use('/posts', apiPostsRouter);
 
-// router.use('/autores', apiPostsRouter) <--- ELIMINAR LÍNEA DUPLICADA
-// const apiPostsRouter = require('./api/posts.routes'); <--- ELIMINAR O CONVERTIR
 
-export default router; // Exportación ES Module
+export default router; 
