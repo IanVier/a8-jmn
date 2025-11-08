@@ -1,10 +1,8 @@
-// index.js (CORREGIDO)
-
 import http from "node:http";
-import app from "./src/app.js"; // ¡Añadir la extensión .js!
+import app from "./src/app.js"; 
 
 // Config .env
-import 'dotenv/config'; // Forma moderna
+import 'dotenv/config';
 
 // Server creation
 const server = http.createServer(app);
