@@ -1,14 +1,26 @@
-// src/models/autores.model.js (CORREGIDO)
+import db from '../../config/db.js'; // Inyecta la conexión 
 
-import pool from '../../dbConfig.js'; // Inyecta la conexión (el pool)
-
-const getAll = async () => { // <--- Función asíncrona
-    // pool.query devuelve una Promesa, usamos await y desestructuramos [rows]
-    const [rows] = await pool.query('SELECT * FROM autores'); 
-    return rows;
+const selectAutores = async () => { 
+    const [result] = await db.query('SELECT * FROM autores'); 
+    return result;
 }
 
-// Exportamos la función dentro de un objeto llamado Autor (convención de modelo)
-export const Autor = { 
-    getAll
+const selectById = async (autorId) => {
+    const [result] = await db.query(
+        'select nombre, email, imagen from autores where id = ? ',
+        [autorId] );
+     /*las select devuelven siempre un array */
+    if (result.length === 0) return null;
+    return result[0];
+};
+
+const insertAutor = async ({nombre, email, imagen}) => {
+    const [result] = await db.query(
+        'insert into autores (nombre, email, imagen) values (?, ?, ? )',
+        [nombre, email, imagen] );
+    return result;
+};
+
+export const AutoresModel = { 
+    selectAutores, selectById, insertAutor
 }

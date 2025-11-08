@@ -1,16 +1,11 @@
 import { Router } from 'express';
-import { Autor } from '../../models/autores.model.js'; // Importa el modelo
+import { Autores } from '../../controllers/autores.controller.js'; 
 
 const router = Router(); 
 
-router.get('/', async (req, res) => { 
-    try {
-        const autores = await Autor.getAll(); 
-        res.json(autores); 
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Error al obtener autores: ' + error.message });
-    }
-});
+router.get('/', Autores.getAll);
+router.get('/:autorId', Autores.getById);
+
+router.post('/', Autores.create);
 
 export default router; 

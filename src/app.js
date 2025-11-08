@@ -1,16 +1,9 @@
-// src/app.js (CORREGIDO)
-
-import express from "express"; // <--- CAMBIO
-import pool from '../dbConfig.js'; // conexion bbdd (Añadir .js)
-import apiRoutes from './routes/api.routes.js'; // <--- Añadir esta línea aquí
+import express from "express"; 
+import apiRoutes from './routes/api.routes.js'; 
 
 const app = express();
+
 app.use(express.json());
-
-
-// Route configuration
-// const apiRoutes = require('./routes/api.routes'); <--- ¡ELIMINAR ESTA LÍNEA!
-
 app.use('/api', apiRoutes);
 
 // 404 handler
@@ -26,4 +19,4 @@ app.use((err, req, res, next) => {
     res.status(500).json({ message: err.message });
 });
 
-export default app; // <--- CAMBIO
+export default app; 
