@@ -17,8 +17,8 @@ const getById = async (req, res) => {
 };
 
 const create = async (req, res) => {
-  const { insertAutor } = await AutoresModel.insertAutor(req.body);
-  const autor = await AutoresModel.selectById(insertAutor);
+  const { insertId }  = await AutoresModel.insertAutor(req.body);
+  const autor = await AutoresModel.selectById(insertId);
   res.json(autor);
 };
 
