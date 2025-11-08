@@ -1,16 +1,8 @@
 import { Router } from 'express';
-import { Posts } from '../../models/posts.model.js'
+import { Posts } from '../../controllers/posts.controller.js'
 
 const router = Router();
 
-router.get('/', async (req, res) => {
-    try {
-        const posts = await Posts.getAll();
-        res.json(posts);
-    } catch (error) {
-        console.log (error);
-        res.status(500).json({ error: 'Error al obtener posts' + error.message })
-    }
-})
+router.get('/', Posts.getAll);
 
 export default router; 

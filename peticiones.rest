@@ -1,5 +1,11 @@
+
 @URL = http://localhost:3000/api
 
+############################
+######### Autores ##########
+############################
+
+###
 GET {{URL}}/autores
 
 ###
@@ -14,6 +20,10 @@ Content-Type: application/json
     "email": "clemen1@blog.com",
     "imagen": "https://www.animalbank.net/wp-content/uploads/2019/03/f4.jpg"
 }
+
+############################
+########## Posts ###########
+############################
 
 ###
 GET {{URL}}/posts
