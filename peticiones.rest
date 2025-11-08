@@ -27,3 +27,13 @@ Content-Type: application/json
 
 ###
 GET {{URL}}/posts
+
+###
+GET {{URL}}/post/3
+
+###
+POST {{URL}}/posts
+Content-Type: application/json
+{
+    ///campos aqui
+}
