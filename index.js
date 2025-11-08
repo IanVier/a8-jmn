@@ -1,8 +1,12 @@
+
+// Config .env
+import dotenv from 'dotenv'; 
+dotenv.config(); 
+
+// Server creation and configuration
 import http from "node:http";
 import app from "./src/app.js"; 
 
-// Config .env
-import 'dotenv/config';
 
 // Server creation
 const server = http.createServer(app);

@@ -1,12 +1,15 @@
 GET http://localhost:3000/api/autores
 
 ###
+GET http://localhost:3000/api/autores/3
+
+###
 POST http://localhost:3000/api/autores
 Content-Type: application/json
 
 {
-    "nombre": "Carl",
-    "email": "carl@blog.com",
+    "nombre": "yy",
+    "email": "yy@blog.com",
     "imagen": "https://www.animalbank.net/wp-content/uploads/2019/03/f4.jpg"
 }
 
