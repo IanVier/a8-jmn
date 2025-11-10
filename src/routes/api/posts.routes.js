@@ -1,8 +1,10 @@
 import { Router } from 'express';
-import { Posts } from '../../controllers/posts.controller.js'
+import { Posts } from '../../controllers/posts.controller.js';
 
 const router = Router();
 
-router.get('/', Posts.getAll);
+router.get('/', Posts.getAll); // ojo aqui me dio un error xq volví a poner /posts
+router.get('/:postId', Posts.getById);
+router.post('/', Posts.newPost);
 
-export default router; 
+export default router;

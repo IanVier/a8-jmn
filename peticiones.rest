@@ -27,3 +27,17 @@ Content-Type: application/json
 
 ###
 GET {{URL}}/posts
+
+###
+GET {{URL}}/posts/5
+
+###
+POST {{URL}}/posts
+Content-Type: application/json
+
+  {
+    "titulo": "Explorer Dev and fix",
+    "descripcion": "Exploramos las últimas devs",
+    "autores_id": 1,
+    "categoria": "Programación"
+  }

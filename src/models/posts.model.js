@@ -1,14 +1,31 @@
-import db from '../../config/db.js';
+import db from '../../config/db.js'
 
 const selectPosts = async () => {
-        //desestructuramos [post] para quedarno con el primer valor
-        const [posts] = await db.query(
-        `select a.nombre, p.titulo, p.descripcion, p.fecha_creacion 
-        from posts p 
-        left join autores a on a.id = p.autores_id;`);
-    return posts;
-}
+    const [result] = await db.query('select * from posts');
+    return result;
+};
+
+const selectById = async (postId) => {
+    const [result] = await db.query(`
+        select * from posts where id = ?
+        `, [postId] );
+    if (result.length === 0) return null;
+    return result[0];
+};
+
+const insertPost = async (postData) => {
+    const { titulo, descripcion, autores_id, categoria } = postData;
+    const query = `
+        insert into posts 
+        (titulo, descripcion, autores_id, categoria) 
+        values (?, ?, ?, ?)
+        `;
+    const values = [titulo, descripcion, autores_id, categoria];
+    const [result] = await db.query(query, values);
+    return result.insertId;
+};
+
 
 export const PostsModel = {
-    selectPosts
+    selectPosts, insertPost, selectById
 }
