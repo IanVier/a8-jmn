@@ -29,11 +29,15 @@ Content-Type: application/json
 GET {{URL}}/posts
 
 ###
-GET {{URL}}/post/3
+GET {{URL}}/posts/5
 
 ###
 POST {{URL}}/posts
 Content-Type: application/json
-{
-    ///campos aqui
-}
+
+  {
+    "titulo": "Explorer Dev and fix",
+    "descripcion": "Exploramos las últimas devs",
+    "autores_id": 1,
+    "categoria": "Programación"
+  }
