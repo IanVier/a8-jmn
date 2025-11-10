@@ -29,7 +29,7 @@ Content-Type: application/json
 GET {{URL}}/posts
 
 ###
-GET {{URL}}/posts/5
+GET {{URL}}/posts/8
 
 ###
 POST {{URL}}/posts

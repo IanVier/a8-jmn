@@ -11,7 +11,10 @@ const selectPosts = async () => {
 
 const selectById = async (postId) => {
     const [result] = await db.query(`
-        select * from posts where id = ?
+        select a.id as idAutor, a.nombre, a.email, a.imagen, p.id as idPost, p.titulo, p.descripcion, p.fecha_creacion, p.categoria 
+        from posts p
+        left join autores a on a.id = p.autores_id
+        where p.id = ?
         `, [postId] );
     if (result.length === 0) return null;
     return result[0];
