@@ -18,6 +18,22 @@ const getById = async (req, res) => {
   res.json(post);
 };
 
+const getAllByAutor = async (req, res) => {
+  try {
+    const { autorId } = req.params;
+    if (!autorId || isNaN(parseInt(autorId))) {
+          return res.status(400).json({ error: 'ID de autor no válido.' });
+      }
+    const result = await PostsModel.selectPostsByAutor(autorId); 
+    if (result.length === 0) {
+          return res.status(404).json({ message: `No se encontraron posts para el autor con ID ${autorId}.` });
+      }
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({error: 'Error interno del servidor al obtener posts por autor.'})
+  }
+};
+
 const newPost = async (req, res) => {
   try {
     const insertID = await PostsModel.insertPost(req.body);
@@ -29,6 +45,6 @@ const newPost = async (req, res) => {
 };
 
 export const Posts = {
-  getAll, newPost, getById
+  getAll, newPost, getById, getAllByAutor
 };
 

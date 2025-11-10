@@ -16,9 +16,9 @@ POST {{URL}}/autores
 Content-Type: application/json
 
 {
-    "nombre": "clemen1",
-    "email": "clemen1@blog.com",
-    "imagen": "https://www.animalbank.net/wp-content/uploads/2019/03/f4.jpg"
+  "nombre": "Carl Cox",
+  "email": "carlcox@blog.com",
+  "imagen": "https://www.animalbank.net/wp-content/uploads/2019/03/f4.jpg"
 }
 
 ############################
@@ -28,16 +28,19 @@ Content-Type: application/json
 ###
 GET {{URL}}/posts
 
-###
-GET {{URL}}/posts/8
+### get post by idPost
+GET {{URL}}/posts/29
+
+### get post by idAutor
+GET {{URL}}/posts/byAutor/30
 
 ###
 POST {{URL}}/posts
 Content-Type: application/json
 
   {
-    "titulo": "Explorer Dev and fix",
-    "descripcion": "Exploramos las últimas devs",
-    "autores_id": 1,
-    "categoria": "Programación"
+    "titulo": "¿Techno o House? La Versatilidad del Sonido Carl Cox",
+    "descripcion": "Discutiendo los límites de género en las sesiones de Cox, mostrando su habilidad para moverse fluidamente entre el House, el Techno y el Breakbeat.",
+    "autores_id": 30,
+    "categoria": "Análisis Musical"
   }
