@@ -1,0 +1,43 @@
+
+@URL = http://localhost:3000/api
+
+############################
+######### Autores ##########
+############################
+
+###
+GET {{URL}}/autores
+
+###
+GET {{URL}}/autores/3
+
+###
+POST {{URL}}/autores
+Content-Type: application/json
+
+{
+    "nombre": "clemen1",
+    "email": "clemen1@blog.com",
+    "imagen": "https://www.animalbank.net/wp-content/uploads/2019/03/f4.jpg"
+}
+
+############################
+########## Posts ###########
+############################
+
+###
+GET {{URL}}/posts
+
+###
+GET {{URL}}/posts/5
+
+###
+POST {{URL}}/posts
+Content-Type: application/json
+
+  {
+    "titulo": "Explorer Dev and fix",
+    "descripcion": "Exploramos las últimas devs",
+    "autores_id": 1,
+    "categoria": "Programación"
+  }

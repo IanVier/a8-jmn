@@ -1,9 +1,12 @@
-// Server creation and configuration
-const http = require("node:http");
-const app = require("./src/app");
 
 // Config .env
-require("dotenv").config();
+import dotenv from 'dotenv'; 
+dotenv.config(); 
+
+// Server creation and configuration
+import http from "node:http";
+import app from "./src/app.js"; 
+
 
 // Server creation
 const server = http.createServer(app);
