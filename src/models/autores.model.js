@@ -1,4 +1,4 @@
-import db from '../../config/db.js'; // Inyecta la conexión 
+import db from '../../config/db.js';
 
 const selectAutores = async () => { 
     const [result] = await db.query('SELECT * FROM autores'); 
