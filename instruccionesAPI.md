@@ -1,4 +1,4 @@
-## Documentación de la API de Blog
+## Documentación de la API de Blog 12/11/2025
 
 Esta documentación describe la interfaz RESTful de la API para la gestión de Autores y Posts desarrollada en Express. 
 El **endpoint base** para todas las peticiones es `http://localhost:3000/api`.

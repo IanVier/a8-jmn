@@ -31,7 +31,7 @@ GET {{URL}}/posts
 ### get post by idPost
 GET {{URL}}/posts/29
 
-### get post by idAutor
+### get posts by idAutor
 GET {{URL}}/posts/byAutor/30
 
 ###
